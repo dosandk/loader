@@ -2,11 +2,11 @@ var App = {};
 
 App.loader = {
     isShown: false,
-    queue: 0,
+    counter: 0,
     show: function() {
         var self = this;
 
-        self.queue += 1;
+        self.counter += 1;
 
         if (!self.isShown) {
             $('.loader').removeClass('hide');
@@ -16,13 +16,11 @@ App.loader = {
     hide: function() {
         var self = this;
 
-        self.queue ? self.queue-= 1 : self.queue = 0;
+        self.counter ? self.counter-= 1 : self.counter = 0;
 
-        if (!self.queue) {
-            if (self.isShown) {
-                $('.loader').addClass('hide');
-                self.isShown = false;
-            }
+        if (!self.counter && self.isShown) {
+            $('.loader').addClass('hide');
+            self.isShown = false;
         }
     }
 };

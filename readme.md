@@ -1,6 +1,6 @@
 ### Simple loader
 
-Loader increase counter when show method calls and decrease this counter when hide method called.
+Loader increase counter when show method called and decrease this counter when hide method called.
 
 Example:
 

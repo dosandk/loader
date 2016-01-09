@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="loader-queue.js"></script>
+    <link rel="stylesheet" href="loader-queue.css">
+</head>
+<body>
+
+    <div id="loader-container" class="field debug"></div>
+
+    <script>
+        // Example 1
+        App.loader.show();
+        App.loader.show();
+        App.loader.show();
+        App.loader.hide();
+        App.loader.hide();
+        App.loader.hide();
+
+        // Example 2
+        App.loader.show(3);
+        App.loader.show(2);
+        App.loader.show(1);
+
+        App.loader.hide(2);
+        App.loader.hide(3);
+        App.loader.hide(1);
+
+        // Example 3
+        App.loader.show();
+        App.loader.hide(4);
+        App.loader.hide(5);
+        App.loader.hide(8);
+    </script>
+</body>
+</html>

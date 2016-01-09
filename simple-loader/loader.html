@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Simple loader</title>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="loader.js"></script>
     <link rel="stylesheet" href="loader.css">
@@ -11,5 +11,25 @@
     <div class="field debug">
         <div class="loader hide"></div>
     </div>
+
+    <script>
+        App.loader.show();
+        setTimeout(function () {
+            console.error('ajax 1');
+            App.loader.hide();
+        }, 2000);
+
+        App.loader.show();
+        setTimeout(function () {
+            console.error('ajax 2');
+            App.loader.hide();
+        }, 3000);
+
+        App.loader.show();
+        setTimeout(function () {
+            console.error('ajax 2');
+            App.loader.hide(); // only this call of `hide` will hide loader
+        }, 5000);
+    </script>
 </body>
 </html>
